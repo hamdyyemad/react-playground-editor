@@ -104,7 +104,7 @@ export function WebViewIframe({
     // Always update on initial render or when content changes
     if (htmlContent && htmlContent !== previousHtmlRef.current) {
       previousHtmlRef.current = htmlContent;
-      const timeoutId = setTimeout(updatePreview, 300); // Debounce updates
+      const timeoutId = setTimeout(updatePreview, 100); // Debounce updates
       return () => clearTimeout(timeoutId);
     }
   }, [htmlContent, updatePreview]);

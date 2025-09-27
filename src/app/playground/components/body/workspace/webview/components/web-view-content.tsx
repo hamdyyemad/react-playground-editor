@@ -48,7 +48,6 @@ export function WebViewContent({ files }: WebViewContentProps) {
       <WebViewHeader url={currentUrl} onRefresh={updatePreview} />
 
       <WebViewIframe
-        key={refreshTrigger} // Force re-render on refresh
         htmlContent={htmlContent}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
