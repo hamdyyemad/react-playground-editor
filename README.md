@@ -15,6 +15,23 @@ A comprehensive code editing playground component for React applications. This l
 
 ## Installation
 
+### Step 1: Install Peer Dependencies
+
+**⚠️ Important**: You must install the peer dependencies first before installing the library:
+
+```bash
+# Install peer dependencies
+npm install lucide-react zustand monaco-editor @monaco-editor/react react-resizable
+
+# Or with yarn
+yarn add lucide-react zustand monaco-editor @monaco-editor/react react-resizable
+
+# Or with pnpm
+pnpm add lucide-react zustand monaco-editor @monaco-editor/react react-resizable
+```
+
+### Step 2: Install the Library
+
 ```bash
 npm install react-playground-editor
 # or
@@ -22,6 +39,13 @@ yarn add react-playground-editor
 # or
 pnpm add react-playground-editor
 ```
+
+### Why Peer Dependencies?
+
+This library uses peer dependencies to:
+- **Prevent version conflicts** between your project and the library
+- **Reduce bundle size** by using your project's existing dependencies
+- **Allow flexibility** in choosing dependency versions
 
 ## Usage
 
@@ -194,6 +218,26 @@ The component uses Tailwind CSS classes. You can customize the appearance by:
 }
 ```
 
+## Troubleshooting
+
+### "Module not found" Errors
+
+If you encounter errors like `Module not found: Can't resolve 'lucide-react'`, it means you haven't installed the peer dependencies:
+
+```bash
+# Install all peer dependencies
+npm install lucide-react zustand monaco-editor @monaco-editor/react react-resizable
+```
+
+### Common Issues
+
+1. **Missing peer dependencies**: Always install peer dependencies first
+2. **Version conflicts**: Ensure your React version is >= 16.8.0
+3. **CSS not loading**: Make sure to import the CSS file:
+   ```tsx
+   import "react-playground-editor/dist/style.css";
+   ```
+
 ## Browser Support
 
 - Chrome 80+
@@ -214,6 +258,13 @@ The component uses Tailwind CSS classes. You can customize the appearance by:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Changelog
+
+### 1.0.1
+
+- **BREAKING**: Moved dependencies to peer dependencies for better compatibility
+- Fixed module resolution issues
+- Updated installation instructions
+- Added troubleshooting section
 
 ### 1.0.0
 
