@@ -54,7 +54,7 @@ This library uses peer dependencies to:
 ```tsx
 import React from "react";
 import { Playground } from "react-playground-editor";
-import "react-playground-editor/dist/style.css";
+import "react-playground-editor/dist/index.css";
 
 function App() {
   return (
@@ -72,7 +72,7 @@ export default App;
 ```tsx
 import React from "react";
 import { Playground } from "react-playground-editor";
-import "react-playground-editor/dist/style.css";
+import "react-playground-editor/dist/index.css";
 
 function App() {
   const handleFileChange = (files) => {
@@ -235,7 +235,7 @@ npm install lucide-react zustand monaco-editor @monaco-editor/react react-resiza
 2. **Version conflicts**: Ensure your React version is >= 16.8.0
 3. **CSS not loading**: Make sure to import the CSS file:
    ```tsx
-   import "react-playground-editor/dist/style.css";
+   import "react-playground-editor/dist/index.css";
    ```
 
 ## Browser Support

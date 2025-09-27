@@ -8,7 +8,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "SETUP_GUIDE.md"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -41,36 +42,37 @@
     "url": "https://github.com/hamdyyemad/react-playground-editor/issues"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "zustand": "^5.0.8",
+    "@monaco-editor/react": "^4.6.0",
     "lucide-react": "^0.544.0",
     "monaco-editor": "^0.53.0",
-    "@monaco-editor/react": "^4.6.0",
-    "react-resizable": "^3.0.5"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-resizable": "^3.0.5",
+    "zustand": "^5.0.8"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@types/react": "^19.1.14",
     "@types/react-dom": "^19.1.9",
     "@types/react-resizable": "^3.0.5",
     "@typescript-eslint/eslint-plugin": "^8.44.1",
     "@typescript-eslint/parser": "^8.44.1",
+    "autoprefixer": "^10.4.21",
     "eslint": "^9.36.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "postcss": "^8.5.6",
     "rollup": "^4.52.3",
-    "@rollup/plugin-typescript": "^12.1.4",
-    "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-commonjs": "^28.0.6",
-    "@rollup/plugin-terser": "^0.4.4",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
-    "typescript": "^5.9.2",
     "tailwindcss": "^4.1.13",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6"
+    "typescript": "^5.9.2"
   }
 }

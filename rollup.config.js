@@ -40,6 +40,7 @@ export default {
     postcss({
       extract: true,
       minimize: true,
+      sourceMap: true,
     }),
     terser(),
   ],

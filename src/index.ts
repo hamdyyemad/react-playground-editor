@@ -1,3 +1,6 @@
+// Import styles
+import "./styles/index.css";
+
 // Main component
 export { Playground } from "./components/Playground";
 export type { PlaygroundProps } from "./components/Playground";
