@@ -42,14 +42,14 @@
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
-  },
-  "dependencies": {
+    "react-dom": ">=16.8.0",
     "zustand": "^5.0.8",
     "lucide-react": "^0.544.0",
     "monaco-editor": "^0.53.0",
     "@monaco-editor/react": "^4.6.0",
-    "react-resizable": "^3.0.5",
+    "react-resizable": "^3.0.5"
+  },
+  "dependencies": {
     "tslib": "^2.8.1"
   },
   "devDependencies": {
