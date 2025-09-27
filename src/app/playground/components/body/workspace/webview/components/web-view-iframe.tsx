@@ -21,7 +21,12 @@ export function WebViewIframe({
   refreshTrigger,
 }: WebViewIframeProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const previousHtmlRef = useRef<string>("");
+  const htmlContentRef = useRef<string>(htmlContent);
   const addConsoleOutput = useConsoleStore((state) => state.addConsoleOutput);
+
+  // Update the ref whenever htmlContent changes
+  htmlContentRef.current = htmlContent;
 
   // Memoize the console output function to prevent unnecessary re-renders
   const handleConsoleOutput = useCallback(
@@ -34,12 +39,12 @@ export function WebViewIframe({
   );
 
   const updatePreview = useCallback(() => {
-    if (iframeRef.current && htmlContent) {
+    if (iframeRef.current && htmlContentRef.current) {
       setIsLoading(true);
 
       // Add timestamp to ensure unique content
       const timestamp = Date.now();
-      const contentWithTimestamp = htmlContent.replace(
+      const contentWithTimestamp = htmlContentRef.current.replace(
         "<head>",
         `<head>\n<!-- Updated at ${timestamp} -->`
       );
@@ -60,7 +65,7 @@ export function WebViewIframe({
         setIsLoading(false);
       }, 50);
     }
-  }, [htmlContent, setIsLoading, onUrlChange]);
+  }, [setIsLoading, onUrlChange]);
 
   // Listen for console messages and navigation from iframe
   useEffect(() => {
@@ -100,13 +105,21 @@ export function WebViewIframe({
     return () => window.removeEventListener("message", handleMessage);
   }, [handleConsoleOutput, onUrlChange, onNavigation]);
 
-  // Update preview whenever HTML content changes or refresh is triggered
+  // Update preview when HTML content changes or refresh is triggered
   useEffect(() => {
-    if (htmlContent) {
+    if (htmlContent && htmlContent !== previousHtmlRef.current) {
+      previousHtmlRef.current = htmlContent;
       const timeoutId = setTimeout(updatePreview, 50); // Faster updates
       return () => clearTimeout(timeoutId);
     }
-  }, [htmlContent, refreshTrigger, updatePreview]);
+  }, [htmlContent, refreshTrigger]);
+
+  // Handle refresh trigger separately
+  useEffect(() => {
+    if (refreshTrigger !== undefined && refreshTrigger > 0) {
+      updatePreview();
+    }
+  }, [refreshTrigger]);
 
   // Handle URL changes from navigation store
   useEffect(() => {

@@ -29,7 +29,7 @@ export function WebViewContent({ files }: WebViewContentProps) {
       const newHtmlContent = HTMLGenerator.generateHTML(files);
       setHtmlContent(newHtmlContent);
     }
-  }, [refreshTrigger, files]);
+  }, [refreshTrigger]); // Only depend on refreshTrigger, not files
 
   // Analyze dependencies whenever files change
   useEffect(() => {
