@@ -43,6 +43,7 @@ pnpm add react-playground-editor
 ### Why Peer Dependencies?
 
 This library uses peer dependencies to:
+
 - **Prevent version conflicts** between your project and the library
 - **Reduce bundle size** by using your project's existing dependencies
 - **Allow flexibility** in choosing dependency versions
