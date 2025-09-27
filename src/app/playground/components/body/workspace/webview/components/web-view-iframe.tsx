@@ -21,7 +21,6 @@ export function WebViewIframe({
   refreshTrigger,
 }: WebViewIframeProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const previousHtmlRef = useRef<string>("");
   const addConsoleOutput = useConsoleStore((state) => state.addConsoleOutput);
 
   // Memoize the console output function to prevent unnecessary re-renders
@@ -35,9 +34,17 @@ export function WebViewIframe({
   );
 
   const updatePreview = useCallback(() => {
-    if (iframeRef.current) {
+    if (iframeRef.current && htmlContent) {
       setIsLoading(true);
-      const blob = new Blob([htmlContent], { type: "text/html" });
+
+      // Add timestamp to ensure unique content
+      const timestamp = Date.now();
+      const contentWithTimestamp = htmlContent.replace(
+        "<head>",
+        `<head>\n<!-- Updated at ${timestamp} -->`
+      );
+
+      const blob = new Blob([contentWithTimestamp], { type: "text/html" });
       const url = URL.createObjectURL(blob);
 
       iframeRef.current.src = url;
@@ -51,7 +58,7 @@ export function WebViewIframe({
       setTimeout(() => {
         URL.revokeObjectURL(url);
         setIsLoading(false);
-      }, 100);
+      }, 50);
     }
   }, [htmlContent, setIsLoading, onUrlChange]);
 
@@ -93,30 +100,13 @@ export function WebViewIframe({
     return () => window.removeEventListener("message", handleMessage);
   }, [handleConsoleOutput, onUrlChange, onNavigation]);
 
-  // Initial load effect
+  // Update preview whenever HTML content changes or refresh is triggered
   useEffect(() => {
-    if (htmlContent && !previousHtmlRef.current) {
-      previousHtmlRef.current = htmlContent;
-      updatePreview();
-    }
-  }, []);
-
-  // Update preview when HTML content changes
-  useEffect(() => {
-    // Always update on initial render or when content changes
-    if (htmlContent && htmlContent !== previousHtmlRef.current) {
-      previousHtmlRef.current = htmlContent;
-      const timeoutId = setTimeout(updatePreview, 100); // Debounce updates
+    if (htmlContent) {
+      const timeoutId = setTimeout(updatePreview, 50); // Faster updates
       return () => clearTimeout(timeoutId);
     }
-  }, [htmlContent, updatePreview]);
-
-  // Handle refresh trigger
-  useEffect(() => {
-    if (refreshTrigger !== undefined && refreshTrigger > 0) {
-      updatePreview();
-    }
-  }, [refreshTrigger, updatePreview]);
+  }, [htmlContent, refreshTrigger, updatePreview]);
 
   // Handle URL changes from navigation store
   useEffect(() => {

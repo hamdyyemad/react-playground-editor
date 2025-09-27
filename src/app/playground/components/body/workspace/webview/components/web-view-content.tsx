@@ -12,18 +12,29 @@ interface WebViewContentProps {
 export function WebViewContent({ files }: WebViewContentProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
+  const [htmlContent, setHtmlContent] = useState("");
 
   const { currentUrl, setCurrentUrl, navigateTo } = useWebViewNavigationStore();
   const { analyzeProjectDependencies } = usePackageManagerStore();
+
+  // Generate HTML content whenever files change
+  useEffect(() => {
+    const newHtmlContent = HTMLGenerator.generateHTML(files);
+    setHtmlContent(newHtmlContent);
+  }, [files]);
+
+  // Force HTML regeneration when refresh is triggered
+  useEffect(() => {
+    if (refreshTrigger > 0) {
+      const newHtmlContent = HTMLGenerator.generateHTML(files);
+      setHtmlContent(newHtmlContent);
+    }
+  }, [refreshTrigger, files]);
 
   // Analyze dependencies whenever files change
   useEffect(() => {
     analyzeProjectDependencies(files);
   }, [files, analyzeProjectDependencies]);
-
-  const htmlContent = useMemo(() => {
-    return HTMLGenerator.generateHTML(files);
-  }, [files, refreshTrigger]); // Add refreshTrigger to force regeneration
 
   const updatePreview = () => {
     // Force refresh by updating the trigger
