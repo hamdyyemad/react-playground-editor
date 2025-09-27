@@ -19,6 +19,7 @@ export function WebViewIframe({
   currentUrl,
 }: WebViewIframeProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const previousHtmlRef = useRef<string>("");
   const addConsoleOutput = useConsoleStore((state) => state.addConsoleOutput);
 
   // Memoize the console output function to prevent unnecessary re-renders
@@ -39,8 +40,8 @@ export function WebViewIframe({
 
       iframeRef.current.src = url;
 
-      // Notify parent component of the new URL
-      if (onUrlChange) {
+      // Notify parent component of the new URL (only for non-blob URLs)
+      if (onUrlChange && !url.startsWith("blob:")) {
         onUrlChange(url);
       }
 
@@ -92,8 +93,12 @@ export function WebViewIframe({
 
   // Update preview when HTML content changes
   useEffect(() => {
-    const timeoutId = setTimeout(updatePreview, 300); // Debounce updates
-    return () => clearTimeout(timeoutId);
+    // Only update if the HTML content has actually changed
+    if (htmlContent !== previousHtmlRef.current) {
+      previousHtmlRef.current = htmlContent;
+      const timeoutId = setTimeout(updatePreview, 300); // Debounce updates
+      return () => clearTimeout(timeoutId);
+    }
   }, [htmlContent, updatePreview]);
 
   // Handle URL changes from navigation store

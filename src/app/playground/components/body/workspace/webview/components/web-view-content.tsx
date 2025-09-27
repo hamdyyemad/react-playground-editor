@@ -31,7 +31,10 @@ export function WebViewContent({ files }: WebViewContentProps) {
   };
 
   const handleUrlChange = (newUrl: string) => {
-    setCurrentUrl(newUrl);
+    // Only update the URL if it's not a blob URL (blob URLs are temporary)
+    if (!newUrl.startsWith("blob:")) {
+      setCurrentUrl(newUrl);
+    }
   };
 
   const handleNavigation = (url: string) => {
