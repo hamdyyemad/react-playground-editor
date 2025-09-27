@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
-import { useConsoleStore } from "@/stores/terminal/console-store";
-import { useTerminalTabsStore } from "@/stores/terminal/terminal-tabs-store";
+import { useConsoleStore } from "../../../../../../stores/terminal/console-store";
+import { useTerminalTabsStore } from "../../../../../../stores/terminal/terminal-tabs-store";
 import { TerminalTab, ConsoleTab, NetworkTab } from "./content";
 
 export function TerminalContent() {

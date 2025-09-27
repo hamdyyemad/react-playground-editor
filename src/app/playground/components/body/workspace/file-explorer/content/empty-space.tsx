@@ -1,5 +1,5 @@
-import { ContextMenu } from "@/common/context-menu";
-import { useContextMenu } from "@/hooks/use-context-menu";
+import { ContextMenu } from "../../../../../../../common/context-menu";
+import { useContextMenu } from "../../../../../../../hooks/use-context-menu";
 
 export function EmptySpace() {
   const { menuState, openMenu, closeMenu, getContextMenuActions } =

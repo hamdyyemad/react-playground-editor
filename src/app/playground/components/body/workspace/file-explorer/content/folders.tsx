@@ -1,4 +1,4 @@
-import { useFileOrganization } from "@/hooks/use-file-organization";
+import { useFileOrganization } from "../../../../../../../hooks/use-file-organization";
 import { FolderItem } from "./folder/folder-item";
 import { FileItem } from "./file/file-item";
 

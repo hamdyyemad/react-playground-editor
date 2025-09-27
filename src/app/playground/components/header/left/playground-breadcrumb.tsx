@@ -1,5 +1,5 @@
 import { Breadcrumb } from "@/designs/breadcrumb";
-import { Logo } from "@/common/logo";
+import { Logo } from "../../../../../common/logo";
 
 const breadcrumbItems = [
   { label: "Home", href: "/" },

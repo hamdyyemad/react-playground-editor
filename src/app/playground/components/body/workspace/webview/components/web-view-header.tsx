@@ -1,6 +1,6 @@
 import { RefreshCw, X, ArrowLeft, ArrowRight } from "lucide-react";
-import { useWebViewStore } from "@/stores/webview/web-view-store";
-import { useWebViewNavigationStore } from "@/stores/webview/navigation-store";
+import { useWebViewStore } from "../../../../../../../stores/webview/web-view-store";
+import { useWebViewNavigationStore } from "../../../../../../../stores/webview/navigation-store";
 
 interface WebViewHeaderProps {
   url: string;

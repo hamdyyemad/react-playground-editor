@@ -1,5 +1,5 @@
 import { FileItem } from "./file/file-item";
-import { useFileOrganization } from "@/hooks/use-file-organization";
+import { useFileOrganization } from "../../../../../../../hooks/use-file-organization";
 
 export function RootFiles() {
   const { rootFiles } = useFileOrganization();

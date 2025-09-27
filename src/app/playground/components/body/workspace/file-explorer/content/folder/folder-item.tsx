@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Folder, FolderOpen, ChevronRight, ChevronDown } from "lucide-react";
-import { ContextMenu } from "@/common/context-menu";
-import { useContextMenu } from "@/hooks/use-context-menu";
+import { ContextMenu } from "../../../../../../../../common/context-menu";
+import { useContextMenu } from "../../../../../../../../hooks/use-context-menu";
 
 interface FolderItemProps {
   folderName: string;

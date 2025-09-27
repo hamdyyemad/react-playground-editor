@@ -2,8 +2,8 @@ import { useState, useMemo, useEffect } from "react";
 import { WebViewHeader } from "./web-view-header";
 import { WebViewIframe } from "./web-view-iframe";
 import { HTMLGenerator } from "../utils/html-generator";
-import { usePackageManagerStore } from "@/stores/package-manager/package-manager-store";
-import { useWebViewNavigationStore } from "@/stores/webview/navigation-store";
+import { usePackageManagerStore } from "../../../../../../../stores/package-manager/package-manager-store";
+import { useWebViewNavigationStore } from "../../../../../../../stores/webview/navigation-store";
 
 interface WebViewContentProps {
   files: Record<string, string>;

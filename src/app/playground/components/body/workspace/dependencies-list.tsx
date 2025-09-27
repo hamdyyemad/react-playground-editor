@@ -1,6 +1,6 @@
 import { Plus } from "lucide-react";
 import { useState } from "react";
-import { usePackageManagerStore } from "@/stores/package-manager/package-manager-store";
+import { usePackageManagerStore } from "../../../../../stores/package-manager/package-manager-store";
 import {
   AddPackageForm,
   DependencyTabs,

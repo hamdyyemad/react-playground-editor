@@ -1,6 +1,6 @@
 import { ResizableBox } from "react-resizable";
-import { useFileExplorerStore } from "@/stores/explorer/file-explorer-store";
-import { usePanelSizesStore } from "@/stores";
+import { useFileExplorerStore } from "../../../../stores/explorer/file-explorer-store";
+import { usePanelSizesStore } from "../../../../stores";
 import { FileExplorer } from "./workspace";
 
 export function FileExplorerCanvas() {

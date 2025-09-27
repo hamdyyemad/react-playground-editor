@@ -1,5 +1,5 @@
-import { getFileIconDot } from "@/utils/fileIcons";
-import { useFileStore } from "@/stores/explorer/file-store";
+import { getFileIconDot } from "../../../../../../utils/fileIcons";
+import { useFileStore } from "../../../../../../stores/explorer/file-store";
 
 interface EditorHeaderProps {
   filePath: string;

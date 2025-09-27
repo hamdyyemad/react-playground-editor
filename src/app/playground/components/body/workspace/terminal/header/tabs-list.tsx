@@ -1,4 +1,4 @@
-import { useTerminalTabsStore } from "@/stores/terminal/terminal-tabs-store";
+import { useTerminalTabsStore } from "../../../../../../../stores/terminal/terminal-tabs-store";
 
 export function TabsList() {
   const { tabs, activeTab, setActiveTab } = useTerminalTabsStore();

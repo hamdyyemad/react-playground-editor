@@ -1,5 +1,5 @@
 import { FileProcessor } from "./file-processor";
-import { DependencyAnalyzer } from "@/utils/dependency-analyzer";
+import { DependencyAnalyzer } from "../../../../../../../utils/dependency-analyzer";
 
 export class HTMLGenerator {
   static generateHTML(files: Record<string, string>): string {

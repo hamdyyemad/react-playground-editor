@@ -1,4 +1,4 @@
-import { useWebViewStore } from "@/stores/webview/web-view-store";
+import { useWebViewStore } from "../../../../../stores/webview/web-view-store";
 import { Monitor } from "lucide-react";
 import { ToggleButton } from "../../../../../designs/toggle-button";
 

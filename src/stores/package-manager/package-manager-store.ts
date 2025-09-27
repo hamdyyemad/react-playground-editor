@@ -2,7 +2,7 @@ import { create } from "zustand";
 import {
   DependencyAnalyzer,
   DetectedDependency,
-} from "@/utils/dependency-analyzer";
+} from "../../utils/dependency-analyzer";
 
 interface Package {
   name: string;

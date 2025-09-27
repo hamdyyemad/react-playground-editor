@@ -1,9 +1,9 @@
 import { Plus, X, Trash2 } from "lucide-react";
-import { useTerminalStore } from "@/stores/terminal/terminal-store";
-import { useTerminalTabsStore } from "@/stores/terminal/terminal-tabs-store";
-import { useTerminalCommandsStore } from "@/stores/terminal/terminal-commands-store";
-import { useConsoleStore } from "@/stores/terminal/console-store";
-import { useNetworkStore } from "@/stores/terminal/network-store";
+import { useTerminalStore } from "../../../../../../../stores/terminal/terminal-store";
+import { useTerminalTabsStore } from "../../../../../../../stores/terminal/terminal-tabs-store";
+import { useTerminalCommandsStore } from "../../../../../../../stores/terminal/terminal-commands-store";
+import { useConsoleStore } from "../../../../../../../stores/terminal/console-store";
+import { useNetworkStore } from "../../../../../../../stores/terminal/network-store";
 
 export function Controls() {
   const { toggleTerminal } = useTerminalStore();

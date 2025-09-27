@@ -1,4 +1,4 @@
-import { useFileExplorerStore } from "@/stores/explorer/file-explorer-store";
+import { useFileExplorerStore } from "../../../../../stores/explorer/file-explorer-store";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import { ToggleButton } from "../../../../../designs/toggle-button";
 

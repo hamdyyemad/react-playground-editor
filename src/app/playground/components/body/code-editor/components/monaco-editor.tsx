@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import Editor from "@monaco-editor/react";
-import { getLanguageFromPath } from "@/utils/fileIcons";
+import { getLanguageFromPath } from "../../../../../../utils/fileIcons";
 import { getEditorConfig, getEditorOptions } from "../utils/editor-config";
 import { isInsideJSX } from "../utils/jsx-detector";
 import { toggleSmartComments } from "../utils/smart-comment";

@@ -1,4 +1,4 @@
-import { usePanelSizesStore, useWebViewStore } from "@/stores";
+import { usePanelSizesStore, useWebViewStore } from "../../../../stores";
 import { ResizableBox } from "react-resizable";
 import { WebView } from "./workspace";
 

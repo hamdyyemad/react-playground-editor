@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { File, Folder, Edit, Trash2 } from "lucide-react";
-import { useFileStore } from "@/stores/explorer/file-store";
+import { useFileStore } from "../stores/explorer/file-store";
 import { ContextMenuAction } from "../common/context-menu";
 
 interface ContextMenuState {

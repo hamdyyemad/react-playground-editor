@@ -1,4 +1,4 @@
-import { useFileStore } from "@/stores/explorer/file-store";
+import { useFileStore } from "../stores/explorer/file-store";
 
 export function useFileOrganization() {
   const { files } = useFileStore();

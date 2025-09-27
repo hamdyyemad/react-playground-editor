@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { useTerminalCommandsStore } from "@/stores/terminal/terminal-commands-store";
-import { usePackageManagerStore } from "@/stores/package-manager/package-manager-store";
+import { useTerminalCommandsStore } from "../../../../../../../stores/terminal/terminal-commands-store";
+import { usePackageManagerStore } from "../../../../../../../stores/package-manager/package-manager-store";
 
 export function TerminalTab() {
   const { commands, addCommand, updateCommandOutput, clearCommands } =

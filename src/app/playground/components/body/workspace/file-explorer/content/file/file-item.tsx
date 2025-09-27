@@ -1,7 +1,7 @@
-import { ContextMenu } from "@/common/context-menu";
-import { useContextMenu } from "@/hooks/use-context-menu";
-import { useFileStore } from "@/stores/explorer/file-store";
-import { getFileIcon } from "@/utils/fileIcons";
+import { ContextMenu } from "../../../../../../../../common/context-menu";
+import { useContextMenu } from "../../../../../../../../hooks/use-context-menu";
+import { useFileStore } from "../../../../../../../../stores/explorer/file-store";
+import { getFileIcon } from "../../../../../../../../utils/fileIcons";
 
 interface FileItemProps {
   fileName: string;

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { File } from "lucide-react";
-import { useFileStore } from "@/stores/explorer/file-store";
-import { Dialog, DialogActions, DialogButton } from "@/common/dialog";
+import { useFileStore } from "../../../../../../../stores/explorer/file-store";
+import { Dialog, DialogActions, DialogButton } from "../../../../../../../common/dialog";
 
 interface NewFileDialogProps {
   isOpen: boolean;

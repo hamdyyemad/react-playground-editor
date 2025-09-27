@@ -1,4 +1,4 @@
-import { useTerminalStore } from "@/stores/terminal/terminal-store";
+import { useTerminalStore } from "../../../../../stores/terminal/terminal-store";
 import { Terminal } from "lucide-react";
 import { ToggleButton } from "../../../../../designs/toggle-button";
 

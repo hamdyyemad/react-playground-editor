@@ -1,5 +1,5 @@
 import { Trash2 } from "lucide-react";
-import { useConsoleStore } from "@/stores/terminal/console-store";
+import { useConsoleStore } from "../../../../../../../stores/terminal/console-store";
 
 export function ConsoleTab() {
   const { consoleOutput, clearConsole } = useConsoleStore();

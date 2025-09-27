@@ -1,7 +1,7 @@
-import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcut";
-import { useFileExplorerStore } from "@/stores/explorer/file-explorer-store";
-import { useTerminalStore } from "@/stores/terminal/terminal-store";
-import { useWebViewStore } from "@/stores/webview/web-view-store";
+import { useKeyboardShortcuts } from "../hooks/use-keyboard-shortcut";
+import { useFileExplorerStore } from "../stores/explorer/file-explorer-store";
+import { useTerminalStore } from "../stores/terminal/terminal-store";
+import { useWebViewStore } from "../stores/webview/web-view-store";
 
 export function KeyboardShortcuts() {
   const { toggleFileExplorer } = useFileExplorerStore();

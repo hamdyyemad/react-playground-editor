@@ -1,5 +1,5 @@
 import { useRef, useEffect, useCallback } from "react";
-import { useConsoleStore } from "@/stores/terminal/console-store";
+import { useConsoleStore } from "../../../../../../../stores/terminal/console-store";
 
 interface WebViewIframeProps {
   htmlContent: string;

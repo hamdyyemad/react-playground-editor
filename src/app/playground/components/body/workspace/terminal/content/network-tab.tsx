@@ -1,4 +1,4 @@
-import { useNetworkStore } from "@/stores/terminal/network-store";
+import { useNetworkStore } from "../../../../../../../stores/terminal/network-store";
 
 export function NetworkTab() {
   const { requests, clearRequests } = useNetworkStore();

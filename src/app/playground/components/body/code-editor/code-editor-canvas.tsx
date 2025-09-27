@@ -1,4 +1,4 @@
-import { useFileStore } from "@/stores/explorer/file-store";
+import { useFileStore } from "../../../../../stores/explorer/file-store";
 import { EditorHeader } from "./components/editor-header";
 import { MonacoEditor } from "./components/monaco-editor";
 

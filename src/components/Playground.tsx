@@ -1,6 +1,6 @@
 import React from "react";
-import { PlaygroundBody } from "./body";
-import { PlaygroundHeader } from "./header";
+import { PlaygroundHeader, PlaygroundBody } from "../app/playground/components";
+import { KeyboardShortcuts } from "../common/keyboard-shortcuts";
 
 export interface PlaygroundProps {
   initialFiles?: Record<string, string>;
@@ -30,18 +30,13 @@ export const Playground: React.FC<PlaygroundProps> = ({
   style,
 }) => {
   return (
-    <div className={`playground-container ${theme} ${className}`} style={style}>
+    <div
+      className={`h-screen bg-gray-900 text-white flex flex-col ${className}`}
+      style={style}
+    >
+      <KeyboardShortcuts />
       <PlaygroundHeader />
-      <PlaygroundBody
-        initialFiles={initialFiles}
-        defaultActiveFile={defaultActiveFile}
-        showFileExplorer={showFileExplorer}
-        showTerminal={showTerminal}
-        showWebView={showWebView}
-        showDependencies={showDependencies}
-        onFileChange={onFileChange}
-        onActiveFileChange={onActiveFileChange}
-      />
+      <PlaygroundBody />
     </div>
   );
 };

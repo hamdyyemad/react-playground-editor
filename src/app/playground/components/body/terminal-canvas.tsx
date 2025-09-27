@@ -3,7 +3,7 @@ import {
   usePanelSizesStore,
   useTerminalStore,
   useWebViewStore,
-} from "@/stores";
+} from "../../../../stores";
 import { ResizableBox } from "react-resizable";
 import { DependenciesList, Terminal } from "./workspace";
 
