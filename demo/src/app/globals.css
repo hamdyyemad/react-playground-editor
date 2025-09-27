@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    background-color: #0f172a;
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  /* Dark theme by default */
+  * {
+    border-color: #334155;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-500 text-white font-medium py-2 px-4 rounded-md transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-dark-800 hover:bg-dark-700 text-primary-400 font-medium py-2 px-4 rounded-md border border-primary-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm;
+  }
+
+  .btn-outline {
+    @apply bg-transparent hover:bg-primary-600 text-primary-400 hover:text-white font-medium py-2 px-4 rounded-md border border-primary-600 transition-all duration-200 text-sm;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-syntax-function bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900;
+  }
+
+  .card {
+    @apply bg-dark-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-dark-700;
+  }
+
+  .feature-card {
+    @apply bg-dark-800 rounded-lg p-4 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-dark-700;
+  }
+
+  .code-editor-bg {
+    @apply bg-dark-900 border border-dark-700 rounded-lg;
+  }
+
+  .terminal-bg {
+    @apply bg-dark-950 border border-dark-800 rounded-lg;
+  }
+
+  .syntax-keyword {
+    @apply text-syntax-keyword;
+  }
+
+  .syntax-string {
+    @apply text-syntax-string;
+  }
+
+  .syntax-comment {
+    @apply text-syntax-comment;
+  }
+
+  .syntax-number {
+    @apply text-syntax-number;
+  }
+
+  .syntax-function {
+    @apply text-syntax-function;
+  }
+
+  .syntax-variable {
+    @apply text-syntax-variable;
+  }
+
+  .syntax-type {
+    @apply text-syntax-type;
+  }
+
+  .syntax-operator {
+    @apply text-syntax-operator;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Code syntax highlighting */
+.code-block {
+  @apply bg-dark-900 text-syntax-variable rounded-lg p-3 font-mono text-xs overflow-x-auto border border-dark-700;
+}
+
+.code-line {
+  @apply font-mono text-xs leading-relaxed;
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+  }
+}
