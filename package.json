@@ -1,6 +1,6 @@
 {
   "name": "react-playground-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A comprehensive code editing playground component for React applications",
   "type": "module",
   "main": "dist/index.js",
