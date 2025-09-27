@@ -1,0 +1,76 @@
+{
+  "name": "react-playground-editor",
+  "version": "1.0.0",
+  "description": "A comprehensive code editing playground component for React applications",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "playground",
+    "code-editor",
+    "monaco-editor",
+    "ide",
+    "typescript",
+    "javascript",
+    "zustand",
+    "file-explorer",
+    "live-preview"
+  ],
+  "author": "Hamdy Emad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hamdyyemad/react-playground-editor.git"
+  },
+  "homepage": "https://github.com/hamdyyemad/react-playground-editor#readme",
+  "bugs": {
+    "url": "https://github.com/hamdyyemad/react-playground-editor/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "zustand": "^5.0.8",
+    "lucide-react": "^0.544.0",
+    "monaco-editor": "^0.53.0",
+    "@monaco-editor/react": "^4.6.0",
+    "react-resizable": "^3.0.5",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.14",
+    "@types/react-dom": "^19.1.9",
+    "@types/react-resizable": "^3.0.5",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "rollup": "^4.52.3",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "typescript": "^5.9.2",
+    "tailwindcss": "^4.1.13",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6"
+  }
+}
