@@ -8,6 +8,7 @@ interface WebViewIframeProps {
   onUrlChange?: (url: string) => void;
   onNavigation?: (url: string) => void;
   currentUrl?: string;
+  refreshTrigger?: number;
 }
 
 export function WebViewIframe({
@@ -17,6 +18,7 @@ export function WebViewIframe({
   onUrlChange,
   onNavigation,
   currentUrl,
+  refreshTrigger,
 }: WebViewIframeProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const previousHtmlRef = useRef<string>("");
@@ -108,6 +110,13 @@ export function WebViewIframe({
       return () => clearTimeout(timeoutId);
     }
   }, [htmlContent, updatePreview]);
+
+  // Handle refresh trigger
+  useEffect(() => {
+    if (refreshTrigger !== undefined && refreshTrigger > 0) {
+      updatePreview();
+    }
+  }, [refreshTrigger, updatePreview]);
 
   // Handle URL changes from navigation store
   useEffect(() => {

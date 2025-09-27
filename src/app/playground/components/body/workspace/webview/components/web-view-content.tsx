@@ -23,7 +23,7 @@ export function WebViewContent({ files }: WebViewContentProps) {
 
   const htmlContent = useMemo(() => {
     return HTMLGenerator.generateHTML(files);
-  }, [files]);
+  }, [files, refreshTrigger]); // Add refreshTrigger to force regeneration
 
   const updatePreview = () => {
     // Force refresh by updating the trigger
@@ -48,12 +48,14 @@ export function WebViewContent({ files }: WebViewContentProps) {
       <WebViewHeader url={currentUrl} onRefresh={updatePreview} />
 
       <WebViewIframe
+        key={refreshTrigger} // Force re-render on refresh
         htmlContent={htmlContent}
         isLoading={isLoading}
         setIsLoading={setIsLoading}
         onUrlChange={handleUrlChange}
         onNavigation={handleNavigation}
         currentUrl={currentUrl}
+        refreshTrigger={refreshTrigger}
       />
     </div>
   );
