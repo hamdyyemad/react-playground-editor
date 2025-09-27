@@ -91,10 +91,18 @@ export function WebViewIframe({
     return () => window.removeEventListener("message", handleMessage);
   }, [handleConsoleOutput, onUrlChange, onNavigation]);
 
+  // Initial load effect
+  useEffect(() => {
+    if (htmlContent && !previousHtmlRef.current) {
+      previousHtmlRef.current = htmlContent;
+      updatePreview();
+    }
+  }, []);
+
   // Update preview when HTML content changes
   useEffect(() => {
-    // Only update if the HTML content has actually changed
-    if (htmlContent !== previousHtmlRef.current) {
+    // Always update on initial render or when content changes
+    if (htmlContent && htmlContent !== previousHtmlRef.current) {
       previousHtmlRef.current = htmlContent;
       const timeoutId = setTimeout(updatePreview, 300); // Debounce updates
       return () => clearTimeout(timeoutId);
