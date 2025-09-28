@@ -98,12 +98,13 @@ export default function Installation() {
 
           {/* Installation Guide */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="space-y-4"
-          >
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="space-y-4"
+              // Remove the inline style completely
+            >
             <div className="card p-4">
               <div className="flex items-center space-x-2 mb-3">
                 <div className="w-6 h-6 bg-primary-600/20 rounded-md flex items-center justify-center">
