@@ -88,7 +88,7 @@ export default function Demo() {
                 <div className="text-syntax-variable text-xs font-mono leading-relaxed">
                   <span className="syntax-keyword">import</span> React, {"{"}{" "}
                   useState {"}"} <span className="syntax-keyword">from</span>{" "}
-                  <span className="syntax-string">'react'</span>
+                  <span className="syntax-string">&apos;react&apos;</span>
                   <br />
                   <br />
                   <span className="syntax-keyword">function</span>{" "}
@@ -105,7 +105,7 @@ export default function Demo() {
                   &nbsp;&nbsp;&nbsp;&nbsp;&lt;
                   <span className="syntax-type">div</span>{" "}
                   <span className="syntax-keyword">className</span>=
-                  <span className="syntax-string">"app"</span>&gt;
+                  <span className="syntax-string">&quot;app&quot;</span>&gt;
                   <br />
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;
                   <span className="syntax-type">h1</span>&gt;Hello React!&lt;/

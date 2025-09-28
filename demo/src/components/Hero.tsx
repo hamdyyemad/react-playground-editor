@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Play, Download, Star } from "lucide-react";
+import { Play, Download, Star } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -138,7 +138,7 @@ export default function Hero() {
                     <div className="text-syntax-variable text-xs font-mono leading-relaxed">
                       <span className="syntax-keyword">import</span> React{" "}
                       <span className="syntax-keyword">from</span>{" "}
-                      <span className="syntax-string">'react'</span>
+                      <span className="syntax-string">&apos;react&apos;</span>
                       <br />
                       <br />
                       <span className="syntax-keyword">function</span>{" "}

@@ -11,7 +11,6 @@ import {
   Palette,
   GitBranch,
   Monitor,
-  Smartphone,
 } from "lucide-react";
 
 const features = [
